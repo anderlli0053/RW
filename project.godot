@@ -1,0 +1,59 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="RW"
+config/name_localized={
+"sl_SI": ""
+}
+run/main_scene="res://mainmenu.tscn"
+config/features=PackedStringArray("4.2", "GL Compatibility")
+run/low_processor_mode=true
+config/icon="res://icon.svg"
+
+[compression]
+
+formats/zstd/long_distance_matching=true
+formats/zstd/compression_level=22
+formats/zstd/window_log_size=30
+formats/zlib/compression_level=9
+formats/gzip/compression_level=9
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1600
+window/size/mode=3
+window/size/resizable=false
+window/per_pixel_transparency/allowed=true
+
+[dotnet]
+
+project/assembly_name="RW"
+
+[gui]
+
+theme/default_font_generate_mipmaps=true
+
+[input_devices]
+
+buffering/agile_event_flushing=true
+pointing/emulate_touch_from_mouse=true
+pointing/android/enable_long_press_as_right_click=true
+pointing/android/enable_pan_and_scale_gestures=true
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_s3tc_bptc=true
+textures/vram_compression/import_etc2_astc=true
+textures/default_filters/use_nearest_mipmap_filter=true

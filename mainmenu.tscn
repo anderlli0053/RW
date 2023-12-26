@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://dal6k4tvgj802"]
+
+[ext_resource type="Script" path="res://mainmenu.gd" id="1_myevd"]
+[ext_resource type="Theme" uid="uid://dkhb675yyipeb" path="res://default.res" id="1_t3olu"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t3olu")
+script = ExtResource("1_myevd")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t3olu")
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+theme = ExtResource("1_t3olu")
+
+[node name="wf" type="Button" parent="PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.273611
+anchor_top = 0.490625
+anchor_right = 0.416667
+anchor_bottom = 0.51
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t3olu")
+text = "Write to file!"
+
+[node name="rf" type="Button" parent="PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.481944
+anchor_top = 0.490625
+anchor_right = 0.651389
+anchor_bottom = 0.51
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t3olu")
+text = "Read from file!"
+
+[node name="Label" type="Label" parent="PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.418125
+anchor_right = 1.0
+anchor_bottom = 0.4575
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t3olu")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="PanelContainer/Panel/wf" to="." method="_on_wf_pressed" flags=6]
+[connection signal="pressed" from="PanelContainer/Panel/rf" to="." method="_on_rf_pressed" flags=6]
